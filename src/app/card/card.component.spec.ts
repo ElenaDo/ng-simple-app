@@ -17,7 +17,7 @@ describe('CardComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CardComponent);
     component = fixture.componentInstance;
-    component.brewery = { name: 'MultiBrew', country: 'Germany', city: 'Berlin' };
+    component.brewery = {name: 'MultiBrew', country: 'Germany', city: 'Berlin', id: '123', selected: false};
     fixture.detectChanges();
   });
 
