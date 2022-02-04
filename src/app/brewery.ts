@@ -3,5 +3,5 @@ export interface Brewery {
   country: string;
   city: string;
   id: string;
-  selected: boolean;
+  favourite?: boolean;
 }

@@ -11,24 +11,26 @@ export class AppComponent implements OnInit {
 
   constructor(private breweriesService: BreweriesService) {
   }
-  breweries: any;
+  breweries: Brewery[] = [];
 
   title = 'ng-simple-app';
-  newTask: string = '';
+  searchInput: string = '';
+  isFavourite: boolean = false;
   
   ngOnInit(): void {
     this.fetchBreweries()
   }
+
   fetchBreweries() {
-    this.breweriesService.getBreweries().subscribe(brewery => {
-      console.log(brewery)
-      this.breweries = brewery;
+    this.breweriesService.getBreweries().subscribe(breweries => {
+      console.log(breweries)
+      this.breweries = breweries;
     })
   }
 
-  selectCard(id: string) {
+  selectBrewery(id: string) {
     return this.breweries.find((brewery: Brewery)  => {
-      if (brewery.id === id) brewery.selected = !brewery.selected
+      if (brewery.id === id) brewery.favourite = !brewery.favourite
     })
   }
 }
