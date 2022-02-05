@@ -5,14 +5,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CardComponent } from './card/card.component';
-import { searchFilterPipe } from './brewery-filter.pipe'
+import { BreweryListItem } from './brewery-list-item/brewery-list-item.component';
+import { searchFilterPipe } from './brewery-filter.pipe';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { BreweryCardComponent } from './brewery-card/brewery-card.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent,
-    searchFilterPipe
+    BreweryListItem,
+    searchFilterPipe,
+    DashboardComponent,
+    BreweryCardComponent
   ],
   imports: [
     BrowserModule,

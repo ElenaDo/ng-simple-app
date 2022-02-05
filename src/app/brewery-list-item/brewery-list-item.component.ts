@@ -2,11 +2,11 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Brewery } from '../brewery';
 
 @Component({
-  selector: 'app-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css']
+  selector: 'brewery-list-item',
+  templateUrl: './brewery-list-item.component.html',
+  styleUrls: ['./brewery-list-item.component.css']
 })
-export class CardComponent implements OnInit {
+export class BreweryListItem implements OnInit {
 
   constructor() { }
 
@@ -19,7 +19,5 @@ export class CardComponent implements OnInit {
   select() {
     this.newItemEvent.emit(this.brewery.id)
   }
-
-  
 
 }

@@ -1,10 +1,12 @@
 <div class="card m-3 p-2"> 
   <div class="card-body">
     <div class="d-flex justify-content-between">
-      <h4 class="card-title">{{ brewery.name }}</h4>
+      <h4 class="card-title">
+        <a routerLink="/brewery/{{brewery.id}}">
+        {{ brewery.name }}
+        </a>
+      </h4>
       <div class="btn p-0" (click)="select()"><i class="bi bi-star-fill" [class]="[brewery.favourite ? 'text-warning' : 'text-secondary']"></i></div>
     </div>
-    <h5 class="card-text">{{ brewery.country }}</h5>
-    <p class="card-text">{{ brewery.city }}</p>
   </div>
 </div>
