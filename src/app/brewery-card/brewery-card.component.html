@@ -1,7 +1,12 @@
 <div class="card m-3 p-2"> 
   <div class="card-body">
-    <h1 class="header text-center my-4 text-info">{{brewery.name}}</h1>
-    <h5 class="card-text">Country: {{ brewery.country }}</h5>
+      <h1 class="header my-4 text-info">{{brewery.name}}</h1>
+    <h5 class="card-text my-3">Country: {{ brewery.country }}</h5>
     <p class="card-text">City: {{ brewery.city }}</p>
+    <p class="card-text">Brewery type: {{ brewery.brewery_type }}</p>
+    <p class="card-text">{{brewery.created_at | date }}</p>
+    <button type="button" class="btn btn-light" (click)="goBack()">
+      <i class="bi bi-caret-left-fill"></i>Back
+    </button>
   </div>
 </div>

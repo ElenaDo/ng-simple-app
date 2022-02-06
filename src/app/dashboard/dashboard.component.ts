@@ -26,12 +26,10 @@ export class DashboardComponent implements OnInit {
   
   ngOnInit(): void {
     this.fetchBreweries();
-    console.log('dashboard init');
   }
 
   fetchBreweries() {
     this.breweriesService.getBreweries().subscribe(breweries => {
-      console.log(breweries)
       this.breweries = breweries;
     })
   }

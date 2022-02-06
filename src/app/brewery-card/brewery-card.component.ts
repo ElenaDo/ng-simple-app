@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 import { BreweriesService } from '../breweries.service';
 import { Brewery } from '../brewery';
 
@@ -12,7 +13,8 @@ export class BreweryCardComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private breweryService: BreweriesService
+    private breweryService: BreweriesService,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
@@ -23,7 +25,9 @@ export class BreweryCardComponent implements OnInit {
     name: '',
     country: '',
     city: '',
-    id: ''
+    id: '',
+    brewery_type: '',
+    created_at: ''
   }
 
   getBrewery(): void {
@@ -32,6 +36,10 @@ export class BreweryCardComponent implements OnInit {
       .subscribe(brewery => {
         if(brewery) this.brewery = brewery;
       });
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }
