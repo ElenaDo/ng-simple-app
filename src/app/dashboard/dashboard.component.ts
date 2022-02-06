@@ -25,7 +25,8 @@ export class DashboardComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this.fetchBreweries()
+    this.fetchBreweries();
+    console.log('dashboard init');
   }
 
   fetchBreweries() {
@@ -33,11 +34,6 @@ export class DashboardComponent implements OnInit {
       console.log(breweries)
       this.breweries = breweries;
     })
-  }
-
-  getBrewery(id: string){
-    const brewery = this.breweries.find(b => b.id === id)!;
-    this.brewery = brewery;
   }
 
   selectBrewery(id: string) {

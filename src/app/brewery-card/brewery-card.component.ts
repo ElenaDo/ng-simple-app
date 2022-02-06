@@ -29,7 +29,9 @@ export class BreweryCardComponent implements OnInit {
   getBrewery(): void {
     const id = String(this.route.snapshot.paramMap.get('id'));
     this.breweryService.getBrewery(id)
-      .subscribe(brewery => this.brewery = brewery);
+      .subscribe(brewery => {
+        if(brewery) this.brewery = brewery;
+      });
   }
 
 }
