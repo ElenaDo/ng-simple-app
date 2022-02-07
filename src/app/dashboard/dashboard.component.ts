@@ -34,10 +34,8 @@ export class DashboardComponent implements OnInit {
     })
   }
 
-  selectBrewery(id: string) {
-    return this.breweries.find((brewery: Brewery)  => {
-      if (brewery.id === id) brewery.favourite = !brewery.favourite
-    })
+  selectBrewery(brewery: Brewery) {
+    this.breweriesService.setFavourite(brewery.id, !brewery.favourite)
   }
 
 }

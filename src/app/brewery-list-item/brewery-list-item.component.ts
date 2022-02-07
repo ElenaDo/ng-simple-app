@@ -17,7 +17,7 @@ export class BreweryListItem implements OnInit {
   @Input() brewery!: Brewery;
 
   select() {
-    this.newItemEvent.emit(this.brewery.id)
+    this.newItemEvent.emit(this.brewery)
   }
 
 }
